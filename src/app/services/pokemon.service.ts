@@ -19,7 +19,8 @@ export class PokemonService{
     private readonly baseUrl = "https://pokeapi.co/api/v2/"
     private http = inject(HttpClient)
 
-    getList() : Observable<PokemonListData>{
-        return this.http.get<PokemonListData>(this.baseUrl+"/pokemon").pipe(map(response => response))
+    getList(limit: number, offset: number) : Observable<PokemonListData>{
+        return this.http.get<PokemonListData>(this.baseUrl+"/pokemon?limit="+limit+"&offset="+offset)
+        .pipe(map(response => response))
     }
 }
