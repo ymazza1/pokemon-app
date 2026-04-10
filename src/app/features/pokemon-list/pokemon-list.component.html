@@ -1,0 +1,13 @@
+<div>
+    <h1>La Liste des Pokemon</h1>
+
+    @if (pokemonList | async; as Liste) {
+        <ul class="grid">
+            @for (pokemon of Liste.results; track pokemon.name) {
+                <li>{{pokemon.name}}</li>
+            }
+        </ul>
+    }
+
+    <button (click)="goToTrainerPage()">Page du dresseur</button>
+</div>
