@@ -1,0 +1,6 @@
+<div>
+    @if (pokemon | async; as pokemon ) {
+        <span>{{ pokemon.name }}</span>
+        <img [src]="pokemon.sprites.front_default" >
+    }
+</div>

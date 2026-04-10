@@ -11,6 +11,10 @@ export const routes: Routes = [
         loadComponent: () => import("./features/trainer/trainer.component").then((m)=>m.Trainer)
     },
     {
+        path: 'pokemon/:name',
+        loadComponent: () => import("./features/pokemon/pokemon.component").then((m)=>m.Pokemon)
+    },
+    {
         path: '**',
         redirectTo: ''
     }
