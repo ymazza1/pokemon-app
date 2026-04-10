@@ -38,4 +38,8 @@ export class PokemonList implements OnInit{
     goToTrainerPage(){
         this.router.navigate(['/trainer'])
     }
+
+    goToDetails(name: string){
+        this.router.navigate(['/pokemon/'+name])
+    }
 }

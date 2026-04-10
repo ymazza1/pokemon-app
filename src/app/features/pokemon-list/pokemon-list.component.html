@@ -4,7 +4,7 @@
     @if (pokemonList | async; as Liste) {
         <ul class="grid">
             @for (pokemon of Liste.results; track pokemon.name) {
-                <li>{{pokemon.name}}</li>
+                <li>{{pokemon.name}} <button (click)="goToDetails(pokemon.name)">Voir le détail</button></li>
             }
         </ul>
     }
