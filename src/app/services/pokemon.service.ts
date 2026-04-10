@@ -23,7 +23,7 @@ export interface PokemonDetails{
     providedIn: 'root'
 })
 export class PokemonService{
-    private readonly baseUrl = "https://pokeapi.co/api/v2/"
+    private readonly baseUrl = "https://pokeapi.co/api/v2"
     private http = inject(HttpClient)
 
     getList(limit: number, offset: number) : Observable<PokemonListData>{
@@ -33,5 +33,8 @@ export class PokemonService{
 
     getPokemon(name: string): Observable<PokemonDetails>{
         return this.http.get<PokemonDetails>(this.baseUrl + "/pokemon/" + name).pipe(map(response => response))
+    }
+    getPokemonById(id: string): Observable<PokemonDetails>{
+        return this.http.get<PokemonDetails>(this.baseUrl + "/pokemon/" + id).pipe(map(response => response))
     }
 }

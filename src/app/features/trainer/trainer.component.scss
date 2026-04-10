@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$pokemon-yellow: #ffcb05;
+$pokemon-blue: #3d7dca;
+$pokemon-dark-blue: #003a70;
+$pokemon-red: #cc0000;
+
+.trainer-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, $pokemon-blue 0%, $pokemon-dark-blue 100%);
+    padding: 2rem;
+    font-family: 'Press Start 2P', monospace;
+    color: white;
+    text-align: center;
+}
+
+.trainer-title {
+    font-size: 1.5rem;
+    color: $pokemon-yellow;
+    text-shadow: 3px 3px 0 $pokemon-dark-blue;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.team-section {
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid $pokemon-yellow;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.team-title {
+    font-size: 0.9rem;
+    color: $pokemon-yellow;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.pokemon-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid $pokemon-yellow;
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, background 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-4px) scale(1.05);
+        background: rgba(255, 203, 5, 0.2);
+    }
+}
+
+.pokemon-sprite {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+}
+
+.pokemon-name {
+    font-size: 0.5rem;
+    text-transform: capitalize;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.pokeball-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    background: $pokemon-red;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+
+    &:hover {
+        background: darken($pokemon-red, 10%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

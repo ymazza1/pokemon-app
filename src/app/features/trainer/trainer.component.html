@@ -1,4 +1,19 @@
-<div>
-    <h1>Les infos du dresseur</h1>
-    <button (click)="goToPokemonList()">Liste des Pokemon</button>
+<div class="trainer-page">
+    <h1 class="trainer-title">Dresseur</h1>
+
+    <div class="team-section">
+        <h2 class="team-title">Equipe</h2>
+        <div class="pokemon-grid">
+            @for (pokemon of pokemonTeam; track $index) {
+                @if (pokemon | async; as pokemon) {
+                    <div class="pokemon-card">
+                        <img class="pokemon-sprite" [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+                        <span class="pokemon-name">{{pokemon.id}} - {{ pokemon.name }}</span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <button class="pokeball-btn" (click)="goToPokemonList()">Liste des Pokémon</button>
 </div>
